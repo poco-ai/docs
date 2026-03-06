@@ -1,0 +1,20 @@
+---
+title: DingTalk Integration
+description: Configure Stream mode or webhook mode for DingTalk.
+---
+
+# DingTalk Integration
+
+DingTalk supports two inbound modes in Poco.
+
+## Stream mode
+
+Recommended when you do not want to depend on a public webhook.
+
+## Webhook mode
+
+Use when you prefer callback-based delivery to `/api/v1/webhooks/dingtalk`.
+
+## Extra outbound fallback
+
+You can also configure `DINGTALK_WEBHOOK_URL` as a fallback outbound notification channel.

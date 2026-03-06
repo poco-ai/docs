@@ -1,0 +1,24 @@
+---
+title: Manual Docker Compose Startup
+description: Start Poco manually with Docker Compose and optional IM profile.
+---
+
+# Manual Docker Compose Startup
+
+If you prefer to manage the startup flow yourself, use Docker Compose directly.
+
+## Basic startup
+
+```bash
+docker compose up -d
+```
+
+## Enable IM service
+
+```bash
+docker compose --profile im up -d im
+```
+
+## Version pinning
+
+You can pin service images through environment variables such as `BACKEND_IMAGE`, `EXECUTOR_MANAGER_IMAGE`, `EXECUTOR_IMAGE`, and `FRONTEND_IMAGE` before starting Compose.

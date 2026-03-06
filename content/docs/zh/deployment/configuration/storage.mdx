@@ -1,0 +1,14 @@
+---
+title: 存储与数据库
+description: Postgres 与可选 RustFS 对象存储的配套配置说明。
+---
+
+# 存储与数据库
+
+除了应用服务外，Poco 还依赖一些基础设施组件。
+
+## 包含的组件
+
+- 用于关系型持久化的 Postgres
+- 可选的本地 RustFS，用作 S3 兼容对象存储
+- 在不同自部署方案下，也可使用 Cloudflare R2 等外部 S3 服务

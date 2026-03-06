@@ -1,0 +1,20 @@
+---
+title: 钉钉集成
+description: 为钉钉配置 Stream 模式或 webhook 模式。
+---
+
+# 钉钉集成
+
+Poco 对钉钉提供两种入站模式。
+
+## Stream 模式
+
+推荐在不希望依赖公网 webhook 时使用。
+
+## Webhook 模式
+
+适合通过 `/api/v1/webhooks/dingtalk` 接收回调的场景。
+
+## 出站兜底
+
+你也可以配置 `DINGTALK_WEBHOOK_URL` 作为额外的出站通知通道。

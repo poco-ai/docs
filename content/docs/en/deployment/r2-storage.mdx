@@ -1,0 +1,25 @@
+---
+title: Cloudflare R2 or External S3
+description: Use external object storage instead of bundled RustFS.
+---
+
+# Cloudflare R2 or External S3
+
+If you do not want to run RustFS locally, Poco can use Cloudflare R2 or another S3-compatible storage provider.
+
+## Typical variables
+
+```bash
+S3_ENDPOINT=https://<accountid>.r2.cloudflarestorage.com
+S3_REGION=auto
+S3_BUCKET=<bucket-name>
+S3_ACCESS_KEY=<access-key-id>
+S3_SECRET_KEY=<secret-access-key>
+S3_FORCE_PATH_STYLE=false
+```
+
+## Notes
+
+- The bucket should already exist
+- Configure CORS for frontend preview and download flows
+- Optionally set `S3_PUBLIC_ENDPOINT` when browser-facing URLs should differ from the internal endpoint

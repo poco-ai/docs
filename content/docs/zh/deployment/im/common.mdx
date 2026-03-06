@@ -1,0 +1,27 @@
+---
+title: 通用准备
+description: IM 集成共用的前置条件、配置位置与环境变量。
+---
+
+# 通用准备
+
+## 先决条件
+
+- Backend 需要可访问
+- `im` 服务可以启动并查看日志
+- 使用 webhook 时需要公网 HTTPS 访问能力
+
+## 配置文件位置
+
+- `docker compose --profile im up ...` 读取仓库根目录 `.env`
+- 在 `im/` 目录内运行 `uvicorn` 会读取 `im/.env`
+
+## 通用变量
+
+```bash
+IM_DATABASE_URL=sqlite:///./im.db
+BACKEND_URL=http://localhost:8000
+BACKEND_USER_ID=default
+FRONTEND_PUBLIC_URL=http://localhost:3000
+FRONTEND_DEFAULT_LANG=zh
+```

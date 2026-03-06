@@ -1,0 +1,29 @@
+---
+title: Bootstrap Script
+description: Recommended first-run setup for local RustFS-based deployment.
+---
+
+# Bootstrap Script
+
+Use the bootstrap script for a first-time local setup with bundled RustFS storage.
+
+## Prerequisites
+
+- Docker Desktop or Docker Engine
+- Docker Compose v2
+- At least 2 CPU / 4 GB memory
+- `docker login ghcr.io` if required for private images
+
+## Command
+
+```bash
+./scripts/quickstart.sh
+```
+
+## What it prepares
+
+- Copies `.env.example` to `.env` when needed
+- Writes Docker and model-related environment values
+- Creates local data directories
+- Pulls images and starts services by default
+- Creates the configured S3 bucket through `rustfs-init`

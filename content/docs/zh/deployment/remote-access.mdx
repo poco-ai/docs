@@ -1,0 +1,14 @@
+---
+title: 使用 Tailscale 远程访问
+description: 通过 Tailscale 安全地暴露 Poco 前端。
+---
+
+# 使用 Tailscale 远程访问
+
+你可以使用 Tailscale 把本地 Poco 前端安全地暴露给远程设备访问。
+
+## 典型流程
+
+1. 登录 Tailscale 并加入 tailnet
+2. 使用 Tailscale Serve 暴露 `3000` 端口
+3. 在授权的远程设备上访问前端

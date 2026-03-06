@@ -1,0 +1,29 @@
+---
+title: Telegram Integration
+description: Create the bot, configure env vars, register the webhook, and test it.
+---
+
+# Telegram Integration
+
+## Create the bot
+
+1. Open `@BotFather`
+2. Run `/newbot`
+3. Copy the `TELEGRAM_BOT_TOKEN`
+
+## Recommended variables
+
+```bash
+TELEGRAM_BOT_TOKEN=<your-bot-token>
+TELEGRAM_WEBHOOK_SECRET_TOKEN=<random-long-string>
+```
+
+## Start IM service
+
+```bash
+docker compose --profile im up -d im
+```
+
+## Register webhook
+
+Point Telegram webhook to `/api/v1/webhooks/telegram` on your public HTTPS domain and pass the same `secret_token` value when enabled.

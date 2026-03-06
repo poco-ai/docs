@@ -1,0 +1,16 @@
+---
+title: Backend 配置
+description: FastAPI Backend 服务的核心环境变量说明。
+---
+
+# Backend 配置
+
+Backend 负责 API、持久化和会话管理。
+
+## 重点配置
+
+- 通过 `DATABASE_URL` 连接数据库
+- 通过 `S3_*` 配置对象存储
+- 通过密钥、CORS、日志等变量控制安全与应用行为
+
+生产环境中请务必替换所有占位密钥和弱默认值。

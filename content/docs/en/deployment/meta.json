@@ -1,0 +1,13 @@
+{
+  "title": "Local Deployment",
+  "pages": [
+    "!index",
+    "bootstrap-script",
+    "manual-docker",
+    "r2-storage",
+    "configuration",
+    "im",
+    "operations",
+    "remote-access"
+  ]
+}

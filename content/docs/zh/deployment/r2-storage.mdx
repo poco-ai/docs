@@ -1,0 +1,25 @@
+---
+title: Cloudflare R2 / 外部 S3
+description: 不使用本地 RustFS 时，接入外部 S3 兼容对象存储。
+---
+
+# Cloudflare R2 / 外部 S3
+
+如果你不想在本地运行 RustFS，可以让 Poco 使用 Cloudflare R2 或其他 S3 兼容对象存储。
+
+## 常见变量
+
+```bash
+S3_ENDPOINT=https://<accountid>.r2.cloudflarestorage.com
+S3_REGION=auto
+S3_BUCKET=<bucket-name>
+S3_ACCESS_KEY=<access-key-id>
+S3_SECRET_KEY=<secret-access-key>
+S3_FORCE_PATH_STYLE=false
+```
+
+## 注意事项
+
+- bucket 需要预先创建好
+- 需要为前端预览和下载配置 CORS
+- 如果浏览器访问域名与内部访问地址不同，可额外设置 `S3_PUBLIC_ENDPOINT`

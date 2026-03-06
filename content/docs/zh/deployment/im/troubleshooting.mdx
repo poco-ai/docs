@@ -1,0 +1,18 @@
+---
+title: IM 故障排查
+description: 排查 Telegram 与钉钉接入中的常见问题。
+---
+
+# IM 故障排查
+
+## Telegram 机器人不回复
+
+检查服务健康状态、环境变量所在文件、webhook 密钥一致性，以及 IM 日志。
+
+## 钉钉消息收不到
+
+检查是否启用了钉钉、Stream 凭证是否正确，以及群聊中是否按要求 `@机器人`。
+
+## `/help` 可用但普通文本不触发任务
+
+检查 provider 配置，并查看日志中是否存在 provider-disabled 或路由相关错误。

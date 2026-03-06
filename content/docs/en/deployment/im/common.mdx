@@ -1,0 +1,27 @@
+---
+title: Common IM Setup
+description: Shared prerequisites, config locations, and common environment variables.
+---
+
+# Common IM Setup
+
+## Prerequisites
+
+- Backend is reachable
+- The `im` service can be started and its logs can be inspected
+- Public HTTPS access is required for webhook-based modes
+
+## Config file location
+
+- `docker compose --profile im up ...` reads the repository root `.env`
+- Running `uvicorn` inside `im/` reads `im/.env`
+
+## Common variables
+
+```bash
+IM_DATABASE_URL=sqlite:///./im.db
+BACKEND_URL=http://localhost:8000
+BACKEND_USER_ID=default
+FRONTEND_PUBLIC_URL=http://localhost:3000
+FRONTEND_DEFAULT_LANG=zh
+```

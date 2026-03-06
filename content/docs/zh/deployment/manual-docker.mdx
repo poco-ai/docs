@@ -1,0 +1,24 @@
+---
+title: 手动 Docker Compose 启动
+description: 使用 Docker Compose 手动启动 Poco，并按需启用 IM 服务。
+---
+
+# 手动 Docker Compose 启动
+
+如果你希望自行控制启动流程，可以直接使用 Docker Compose。
+
+## 基础启动
+
+```bash
+docker compose up -d
+```
+
+## 启用 IM 服务
+
+```bash
+docker compose --profile im up -d im
+```
+
+## 固定镜像版本
+
+可以在启动前通过 `BACKEND_IMAGE`、`EXECUTOR_MANAGER_IMAGE`、`EXECUTOR_IMAGE`、`FRONTEND_IMAGE` 等环境变量固定服务镜像版本。
