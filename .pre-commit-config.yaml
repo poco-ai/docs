@@ -1,0 +1,27 @@
+repos:
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v9.39.1
+    hooks:
+      - id: eslint
+        name: frontend · lint
+        args: ["--config", "eslint.config.mjs"]
+        files: ^(app|components|lib)/.*\.(js|jsx|ts|tsx)$|^mdx-components\.tsx$|^source\.config\.ts$|^next\.config\.mjs$
+        types: [file]
+        additional_dependencies:
+          - eslint
+          - eslint-config-next
+
+  - repo: https://github.com/rbubley/mirrors-prettier
+    rev: v3.7.4
+    hooks:
+      - id: prettier
+        name: frontend · format
+
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.13.0
+    hooks:
+      - id: markdownlint-cli2
+        args: ["--fix", "--config", ".github/.markdownlint.yaml"]
+        name: docs · lint
+        files: ^(docs/.*|.*)\.md$
+        types: [file]
