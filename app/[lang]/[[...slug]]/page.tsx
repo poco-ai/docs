@@ -39,7 +39,7 @@ export default async function Page(props: PageProps<"/[lang]/[[...slug]]">) {
         <LLMCopyButton markdownUrl={markdownUrl} />
         <ViewOptions
           markdownUrl={markdownUrl}
-          githubUrl={`https://github.com/${gitConfig.user}/${gitConfig.repo}/blob/${gitConfig.branch}/content/docs/${params.lang}/${page.path}`}
+          githubUrl={`https://github.com/${gitConfig.org}/${gitConfig.docsRepo.name}/blob/${gitConfig.docsRepo.branch}/content/docs/${page.path}`}
         />
       </div>
       <DocsBody>
