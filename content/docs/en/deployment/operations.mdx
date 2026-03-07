@@ -3,17 +3,29 @@ title: Common Operations
 description: Default URLs, configuration entry points, and routine deployment operations.
 ---
 
-# Common Operations
+> If you use `docker-compose.r2.yml`, add `-f docker-compose.r2.yml` to commands below.
 
-## Default URLs
+View logs:
 
-- Frontend: `http://localhost:3000`
-- Backend: `http://localhost:8000`
-- Executor Manager: `http://localhost:8001`
-- IM: `http://localhost:8002` when enabled
+```bash
+docker compose logs -f backend executor-manager
+```
 
-## Routine tasks
+Update to latest images (or pull the tags you pinned):
 
-- Use `docker compose logs -f <service>` to inspect logs
-- Restart services with `docker compose restart <service>`
-- Use the configuration pages to locate the right `.env` settings
+```bash
+docker compose pull
+docker compose up -d
+```
+
+Stop:
+
+```bash
+docker compose down
+```
+
+Stop and remove data (deletes Postgres/object storage volumes):
+
+```bash
+docker compose down -v
+```

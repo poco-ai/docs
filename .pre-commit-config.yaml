@@ -25,3 +25,14 @@ repos:
         name: docs · lint
         files: ^(docs/.*|.*)\.md$
         types: [file]
+
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v9.39.1
+    hooks:
+      - id: eslint
+        name: docs · typecheck
+        files: \.(md|mdx)$
+        types: [file]
+        additional_dependencies:
+          - eslint
+          - eslint-plugin-mdx
