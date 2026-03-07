@@ -7,6 +7,7 @@
     "r2-storage",
     "configuration",
     "im",
+    "remind",
     "operations",
     "remote-access"
   ]
