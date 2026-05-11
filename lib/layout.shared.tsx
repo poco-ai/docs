@@ -19,6 +19,9 @@ export function baseOptions(lang = i18n.defaultLanguage): BaseLayoutProps {
       title: "Poco Docs",
       url: `/${lang}`,
     },
+    searchToggle: {
+      enabled: false,
+    },
     i18n,
     githubUrl: `https://github.com/${gitConfig.org}/${gitConfig.mainRepo.name}`,
   };

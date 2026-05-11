@@ -1,4 +1,4 @@
-import { getPageImage, source } from "@/lib/source";
+import { source } from "@/lib/source";
 import {
   DocsBody,
   DocsDescription,
@@ -12,6 +12,18 @@ import { LLMCopyButton, ViewOptions } from "@/components/ai/page-actions";
 import { gitConfig } from "@/lib/layout.shared";
 import { isLocale } from "@/lib/i18n";
 import { createDocsLink } from "@/lib/mdx-link";
+import { withBasePath } from "@/lib/base-path";
+
+function getMarkdownPath(lang: string, slugs: string[]): string {
+  if (slugs.length === 0) {
+    return `/llms.mdx/${lang}/docs/index.mdx`;
+  }
+
+  return `/llms.mdx/${lang}/docs/${[
+    ...slugs.slice(0, -1),
+    `${slugs.at(-1)}.mdx`,
+  ].join("/")}`;
+}
 
 export default async function Page(props: PageProps<"/[lang]/[[...slug]]">) {
   const params = await props.params;
@@ -24,10 +36,7 @@ export default async function Page(props: PageProps<"/[lang]/[[...slug]]">) {
   if (!page) notFound();
 
   const MDX = page.data.body;
-  const markdownUrl =
-    page.slugs.length > 0
-      ? `/llms.mdx/${params.lang}/docs/${page.slugs.join("/")}`
-      : `/llms.mdx/${params.lang}/docs`;
+  const markdownUrl = withBasePath(getMarkdownPath(params.lang, page.slugs));
 
   return (
     <DocsPage toc={page.data.toc} full={page.data.full}>
@@ -72,8 +81,5 @@ export async function generateMetadata(
   return {
     title: page.data.title,
     description: page.data.description,
-    openGraph: {
-      images: getPageImage(page).url,
-    },
   };
 }

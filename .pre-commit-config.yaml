@@ -8,8 +8,8 @@ repos:
         files: ^(app|components|lib)/.*\.(js|jsx|ts|tsx)$|^mdx-components\.tsx$|^source\.config\.ts$|^next\.config\.mjs$
         types: [file]
         additional_dependencies:
-          - eslint
-          - eslint-config-next
+          - eslint@9.39.3
+          - eslint-config-next@16.1.6
 
   - repo: https://github.com/rbubley/mirrors-prettier
     rev: v3.7.4
@@ -34,5 +34,5 @@ repos:
         files: \.(md|mdx)$
         types: [file]
         additional_dependencies:
-          - eslint
+          - eslint@9.39.3
           - eslint-plugin-mdx

@@ -32,10 +32,9 @@ In the project, you can see:
 - `source.config.ts`: MDX collection config (schema/custom options)
 - `lib/layout.shared.tsx`: shared nav/github layout options
 
-| Route                     | Description                                   |
-| ------------------------- | --------------------------------------------- |
-| `app/[lang]/[[...slug]]`  | The localized documentation layout and pages. |
-| `app/api/search/route.ts` | The Route Handler for search.                 |
+| Route                    | Description                                   |
+| ------------------------ | --------------------------------------------- |
+| `app/[lang]/[[...slug]]` | The localized documentation layout and pages. |
 
 ## Fumadocs 使用说明
 
